@@ -2,87 +2,123 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-50 text-gray-800">
-      <div className="container">
+    <div className="relative min-h-screen bg-gradient-to-br from-purple-800 to-purple-900 text-white overflow-hidden">
+      {/* Fondo futurista animado */}
+      <div className="absolute inset-0 -z-10">
+        <div
+          className="absolute inset-0 bg-[url('/futuristic-bg.svg')] bg-cover bg-center opacity-20 animate-fadeIn"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 bg-purple-800 mix-blend-overlay opacity-60"
+          aria-hidden="true"
+        />
+      </div>
+
+      <div className="container mx-auto px-6 py-10 relative z-10">
         {/* Encabezado */}
-        <header className="flex justify-between items-center py-6">
-          <h1 className="text-4xl font-bold">NovaDev</h1>
-          <Link href="/contact">
-            <button className="px-4 py-2">¡Comenzar!</button>
+        <header className="flex justify-between items-center mb-12">
+          <h1 className="text-5xl font-extrabold tracking-tight">NovaDev</h1>
+          <Link
+            href="/contact"
+            className="px-6 py-3 border border-white rounded-full hover:bg-white hover:text-purple-900 transition duration-300"
+          >
+            ¡Comenzar!
           </Link>
         </header>
 
         {/* Sección de Innovación */}
-        <section className="section text-center">
-          <h2 className="text-3xl font-semibold mb-4">Innovar a través de un click</h2>
-          <p className="text-lg">Llegó el momento de evolucionar!</p>
+        <section className="text-center mb-20">
+          <h2 className="text-4xl font-bold mb-4">
+            Innovar con un toque futurista
+          </h2>
+          <p className="text-xl max-w-2xl mx-auto">
+            Transforma tus ideas en soluciones digitales de vanguardia y lleva tu
+            negocio al futuro.
+          </p>
         </section>
 
         {/* Sección de Servicios */}
-        <section className="section">
-          <div className="card">
-            <h2 className="text-2xl font-semibold mb-4">#1 Software a la medida</h2>
+        <section className="grid gap-10 md:grid-cols-3 mb-20">
+          <div className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg transition transform hover:-translate-y-2">
+            <h3 className="text-2xl font-semibold mb-2">Software a la medida</h3>
             <p className="text-lg">
-              Día a día la industria evoluciona, no te quedes atrás. El software personalizado es una solución diseñada específicamente para satisfacer las necesidades exclusivas de una empresa o individuo. A diferencia del software estándar, que puede ser utilizado por diferentes usuarios, el software personalizado se desarrolla teniendo en cuenta los requisitos específicos de un cliente. Esta personalización garantiza que todas las funciones y características del software se adapten perfectamente a las operaciones y procesos de la empresa, lo que resulta en una mayor eficiencia y productividad. Además, el software personalizado puede ser actualizado y modificado según sea necesario, lo que permite a la empresa mantenerse al día con los cambios en el entorno empresarial y tecnológico. En resumen, el software personalizado ofrece una solución a medida que se adapta perfectamente a las necesidades y objetivos de una empresa o individuo.
+              Soluciones personalizadas que se adaptan a las necesidades únicas de
+              tu negocio.
             </p>
           </div>
-        </section>
-
-        <section className="section">
-          <div className="card">
-            <h2 className="text-2xl font-semibold mb-4">#2 Optimiza tu operación</h2>
+          <div className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg transition transform hover:-translate-y-2">
+            <h3 className="text-2xl font-semibold mb-2">
+              Optimiza tu operación
+            </h3>
             <p className="text-lg">
-              Las tareas manuales y operativas, en la mayoría de los casos se pueden agilizar, reduce tiempo y costo de recursos. Para optimizar la operación, es esencial identificar y eliminar cualquier obstáculo o ineficiencia en los procesos. Esto implica analizar de cerca todas las áreas de la operación, desde la producción hasta la logística y el servicio al cliente. Mediante la implementación de métodos y tecnologías más eficientes, se puede mejorar la productividad y reducir los tiempos de espera. Además, es importante capacitar al personal para que utilice las mejores prácticas y esté al tanto de los últimos avances en su campo. Al optimizar la operación, una empresa puede lograr una mayor rentabilidad y ofrecer un mejor servicio a sus clientes.
+              Automatiza procesos y reduce costos con tecnología de punta y
+              procesos eficientes.
             </p>
           </div>
-        </section>
-
-        <section className="section">
-          <div className="card">
-            <h2 className="text-2xl font-semibold mb-4">#3 Mejora la relación con tus clientes</h2>
+          <div className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg transition transform hover:-translate-y-2">
+            <h3 className="text-2xl font-semibold mb-2">
+              Conecta con tus clientes
+            </h3>
             <p className="text-lg">
-              La interacción con el cliente es fundamental para el éxito de cualquier negocio. Es la forma en que nos comunicamos y conectamos con nuestros clientes, entendiendo sus necesidades y brindándoles soluciones personalizadas. A través de la interacción con el cliente, podemos obtener comentarios valiosos que nos ayudan a mejorar nuestros productos y servicios. Además, nos permite establecer relaciones duraderas y leales con nuestros clientes, lo que a su vez genera recomendaciones y referencias positivas. La interacción con el cliente puede llevarse a cabo a través de diferentes canales, como el teléfono, el correo electrónico, las redes sociales y el chat en línea. Es importante que esta interacción sea rápida, eficiente y amigable, para que los clientes se sientan valorados y satisfechos con su experiencia.
+              Establece relaciones duraderas mediante experiencias digitales
+              interactivas.
             </p>
           </div>
         </section>
 
         {/* Sección de Reviews */}
-        <section className="section">
-          <h2 className="text-2xl font-semibold mb-4">¿Qué dicen de Nosotros?</h2>
-          <div className="card">
-            <p className="text-lg italic">&quot;Estoy muy contenta porque ustedes nos entregaron la aplicación en un tiempo récord. Es sorprendente ver cómo han logrado desarrollarla tan rápido y con gran calidad. Su eficiencia y compromiso con el proyecto se reflejan en el resultado final. La aplicación cumple con todas nuestras expectativas y más. Ahora podemos utilizarla para mejorar nuestros procesos y optimizar nuestro trabajo diario. Su equipo ha demostrado estar altamente capacitado y comprometido con su labor. Agradezco sinceramente su esfuerzo y profesionalismo. Estoy seguro de que esta aplicación será un gran éxito y nos ayudará a llevar nuestro negocio al siguiente nivel. ¡Gracias por su excelente trabajo!&quot;</p>
-            <p className="text-right font-bold">- Ficontabo</p>
-          </div>
-          <div className="card">
-            <p className="text-lg italic">&quot;Estoy enormemente agradecido porque han optimizado tareas manuales y desgastantes utilizando tecnología. Antes, dedicaba horas interminables a realizar trabajos que requerían un gran esfuerzo físico, lo cual afectaba mi salud y mi bienestar general. Sin embargo, gracias a la implementación de la tecnología, ahora puedo realizar estas tareas de manera más eficiente y con menor desgaste físico. Esto ha mejorado significativamente mi calidad de vida, permitiéndome dedicar más tiempo a actividades que disfruto y a pasar tiempo con mi familia. Estoy realmente impresionado por los avances tecnológicos y agradezco a aquellos que han trabajado arduamente para hacer posible esta optimización en nuestras labores diarias.&quot;</p>
-            <p className="text-right font-bold">- Ficontabo</p>
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold text-center mb-8">
+            ¿Qué dicen de nosotros?
+          </h2>
+          <div className="space-y-8">
+            <article className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg">
+              <p className="text-lg italic">
+                &quot;La aplicación se desarrolló en un tiempo récord con calidad
+                superior. Realmente marcó la diferencia en nuestros procesos.&quot;
+              </p>
+              <p className="text-right font-bold mt-4">- Ficontabo</p>
+            </article>
+            <article className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg">
+              <p className="text-lg italic">
+                &quot;Optimizar tareas manuales ha revolucionado nuestro negocio,
+                permitiéndonos crecer y brindar un servicio excepcional.&quot;
+              </p>
+              <p className="text-right font-bold mt-4">- Ficontabo</p>
+            </article>
           </div>
         </section>
 
         {/* Sección de Estadísticas */}
-        <section className="section">
-          <h2 className="text-2xl font-semibold mb-4">Estadísticas</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="card">
-              <h3 className="text-lg font-medium text-gray-700">Profesionales altamente capacitados con experiencia internacional</h3>
-              <p className="text-2xl font-bold text-primary">5</p>
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold text-center mb-8">Estadísticas</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg text-center">
+              <h3 className="text-xl font-medium mb-2">
+                Profesionales Capacitados
+              </h3>
+              <p className="text-4xl font-extrabold">5</p>
             </div>
-            <div className="card">
-              <h3 className="text-lg font-medium text-gray-700">Usuarios impactados</h3>
-              <p className="text-2xl font-bold text-secondary">3+</p>
+            <div className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg text-center">
+              <h3 className="text-xl font-medium mb-2">Usuarios Impactados</h3>
+              <p className="text-4xl font-extrabold">3+</p>
             </div>
-            <div className="card">
-              <h3 className="text-lg font-medium text-gray-700">Aliados</h3>
-              <p className="text-2xl font-bold text-accent">2k</p>
+            <div className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg text-center">
+              <h3 className="text-xl font-medium mb-2">Aliados</h3>
+              <p className="text-4xl font-extrabold">2k</p>
             </div>
           </div>
         </section>
 
         {/* Llamada a la acción final */}
-        <section className="section text-center">
-          <h2 className="text-3xl font-semibold mb-4">¿Qué esperas para evolucionar?</h2>
-          <Link href="/contact">
-            <button className="px-6 py-3">¡Comenzar!</button>
+        <section className="text-center">
+          <h2 className="text-4xl font-bold mb-6">¿Listo para el futuro?</h2>
+          <Link
+            href="/contact"
+            className="px-8 py-4 border border-white rounded-full hover:bg-white hover:text-purple-900 transition duration-300"
+          >
+            Contáctanos
           </Link>
         </section>
       </div>
