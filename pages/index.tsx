@@ -1,76 +1,126 @@
-import Sidebar from "../components/Sidebar";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen bg-gray-50 text-gray-800">
-      {/* Sidebar */}
-      <Sidebar />
+    <div className="relative min-h-screen bg-gradient-to-br from-purple-800 to-purple-900 text-white overflow-hidden">
+      {/* Fondo futurista animado */}
+      <div className="absolute inset-0 -z-10">
+        <div
+          className="absolute inset-0 bg-[url('/futuristic-bg.svg')] bg-cover bg-center opacity-20 animate-fadeIn"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 bg-purple-800 mix-blend-overlay opacity-60"
+          aria-hidden="true"
+        />
+      </div>
 
-      {/* Contenido principal */}
-      <div className="flex-1 p-6">
+      <div className="container mx-auto px-6 py-10 relative z-10">
         {/* Encabezado */}
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-semibold">Panel de Control</h1>
-          <input
-            type="text"
-            placeholder="Buscar..."
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-          />
-        </div>
+        <header className="flex justify-between items-center mb-12">
+          <h1 className="text-5xl font-extrabold tracking-tight">NovaDev</h1>
+          <Link
+            href="/contact"
+            className="px-6 py-3 border border-white rounded-full hover:bg-white hover:text-purple-900 transition duration-300"
+          >
+            ¡Comenzar!
+          </Link>
+        </header>
 
-        {/* Sección de Información General */}
-        <div className="grid grid-cols-3 gap-4 mb-6">
-          <div className="bg-white p-4 rounded-lg shadow-md">
-            <h3 className="text-lg font-medium text-gray-700">Total de Empresas</h3>
-            <p className="text-2xl font-bold text-blue-500">120</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-md">
-            <h3 className="text-lg font-medium text-gray-700">Total de Usuarios</h3>
-            <p className="text-2xl font-bold text-green-500">450</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-md">
-            <h3 className="text-lg font-medium text-gray-700">Registros Hoy</h3>
-            <p className="text-2xl font-bold text-indigo-500">35</p>
-          </div>
-        </div>
+        {/* Sección de Innovación */}
+        <section className="text-center mb-20">
+          <h2 className="text-4xl font-bold mb-4">
+            Innovar con un toque futurista
+          </h2>
+          <p className="text-xl max-w-2xl mx-auto">
+            Transforma tus ideas en soluciones digitales de vanguardia y lleva tu
+            negocio al futuro.
+          </p>
+        </section>
 
-        {/* Tabla de Últimos Registros */}
-        <div className="bg-white shadow-md rounded-lg overflow-hidden">
-          <table className="min-w-full border-collapse w-full">
-            <thead className="bg-gray-100">
-              <tr className="text-left text-gray-700">
-                <th className="px-6 py-3">ID</th>
-                <th className="px-6 py-3">Nombre</th>
-                <th className="px-6 py-3">Correo</th>
-                <th className="px-6 py-3">Empresa</th>
-                <th className="px-6 py-3 text-right">Registrado</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b hover:bg-gray-50 transition">
-                <td className="px-6 py-4">001</td>
-                <td className="px-6 py-4">Juan Pérez</td>
-                <td className="px-6 py-4">juan@example.com</td>
-                <td className="px-6 py-4">Tech Corp</td>
-                <td className="px-6 py-4 text-right">Feb 9, 2025</td>
-              </tr>
-              <tr className="border-b hover:bg-gray-50 transition">
-                <td className="px-6 py-4">002</td>
-                <td className="px-6 py-4">María López</td>
-                <td className="px-6 py-4">maria@example.com</td>
-                <td className="px-6 py-4">Finanzas SA</td>
-                <td className="px-6 py-4 text-right">Feb 9, 2025</td>
-              </tr>
-              <tr className="border-b hover:bg-gray-50 transition">
-                <td className="px-6 py-4">003</td>
-                <td className="px-6 py-4">Carlos Gómez</td>
-                <td className="px-6 py-4">carlos@example.com</td>
-                <td className="px-6 py-4">InnovaTech</td>
-                <td className="px-6 py-4 text-right">Feb 8, 2025</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        {/* Sección de Servicios */}
+        <section className="grid gap-10 md:grid-cols-3 mb-20">
+          <div className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg transition transform hover:-translate-y-2">
+            <h3 className="text-2xl font-semibold mb-2">Software a la medida</h3>
+            <p className="text-lg">
+              Soluciones personalizadas que se adaptan a las necesidades únicas de
+              tu negocio.
+            </p>
+          </div>
+          <div className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg transition transform hover:-translate-y-2">
+            <h3 className="text-2xl font-semibold mb-2">
+              Optimiza tu operación
+            </h3>
+            <p className="text-lg">
+              Automatiza procesos y reduce costos con tecnología de punta y
+              procesos eficientes.
+            </p>
+          </div>
+          <div className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg transition transform hover:-translate-y-2">
+            <h3 className="text-2xl font-semibold mb-2">
+              Conecta con tus clientes
+            </h3>
+            <p className="text-lg">
+              Establece relaciones duraderas mediante experiencias digitales
+              interactivas.
+            </p>
+          </div>
+        </section>
+
+        {/* Sección de Reviews */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold text-center mb-8">
+            ¿Qué dicen de nosotros?
+          </h2>
+          <div className="space-y-8">
+            <article className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg">
+              <p className="text-lg italic">
+                &quot;La aplicación se desarrolló en un tiempo récord con calidad
+                superior. Realmente marcó la diferencia en nuestros procesos.&quot;
+              </p>
+              <p className="text-right font-bold mt-4">- Ficontabo</p>
+            </article>
+            <article className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg">
+              <p className="text-lg italic">
+                &quot;Optimizar tareas manuales ha revolucionado nuestro negocio,
+                permitiéndonos crecer y brindar un servicio excepcional.&quot;
+              </p>
+              <p className="text-right font-bold mt-4">- Ficontabo</p>
+            </article>
+          </div>
+        </section>
+
+        {/* Sección de Estadísticas */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold text-center mb-8">Estadísticas</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg text-center">
+              <h3 className="text-xl font-medium mb-2">
+                Profesionales Capacitados
+              </h3>
+              <p className="text-4xl font-extrabold">5</p>
+            </div>
+            <div className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg text-center">
+              <h3 className="text-xl font-medium mb-2">Usuarios Impactados</h3>
+              <p className="text-4xl font-extrabold">3+</p>
+            </div>
+            <div className="p-6 bg-white bg-opacity-10 rounded-xl backdrop-blur-lg shadow-lg text-center">
+              <h3 className="text-xl font-medium mb-2">Aliados</h3>
+              <p className="text-4xl font-extrabold">2k</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Llamada a la acción final */}
+        <section className="text-center">
+          <h2 className="text-4xl font-bold mb-6">¿Listo para el futuro?</h2>
+          <Link
+            href="/contact"
+            className="px-8 py-4 border border-white rounded-full hover:bg-white hover:text-purple-900 transition duration-300"
+          >
+            Contáctanos
+          </Link>
+        </section>
       </div>
     </div>
   );
